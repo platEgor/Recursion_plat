@@ -4,16 +4,9 @@ public class SR1 {
     public static void main(String[] args) {
         System.out.println(f1(40));
         System.out.println(f2(40));
-    }
-
-    public static int f(int n) {
-        if (n >= 0) {
-            if (n == 0) return 1;
-            else if (n == 1) return 3;
-            else if (n % 2 == 0) return f(n - 1) - f(n - 2) + 3*n;
-            else return f(n - 2) - f(n - 3) + 2*n;
-        }
-        return 0;
+        int s = 0;
+        for(int i = 40; i <= 50; i++) s += f3(i);
+        System.out.println(s);
     }
 
     public static int f1(int x){
@@ -39,15 +32,13 @@ public class SR1 {
     }
 
     public static int f3(int x){
-        int i, a = 1, b = 3, c, d;
-        for(int i = 0; i <= x/2; i++){
-            if (i <= 3)
-            c = b - a + 3*2*i;
-            d = b - a + 2*(2*i + 1);
-            a = c; b = d;
+        int a = 5, b = 6, c;
+        for(int i = 4; i <= x; i++){
+            if(b%2 == 0) c = a + i;
+            else c = a + 2*i;
+            a = b;
+            b = c;
         }
-        x = x%2;
-        if (x == 0) return a;
-        else return b;
+        return b;
     }
 }
