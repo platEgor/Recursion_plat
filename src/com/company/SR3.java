@@ -17,7 +17,7 @@ public class SR3 {
 
         System.out.println(f3(5, 0.5));
 
-        System.out.println(f4(1, 5));
+        System.out.println(f4(1, 20));
     }
 
     public static int f1(int x){
